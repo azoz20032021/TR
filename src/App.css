@@ -1,0 +1,162 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Quiz styles */
+.quiz-root {
+  max-width: 900px;
+  margin: 1rem auto;
+  padding: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  direction: rtl;
+  border-radius: 4px;
+}
+.quiz-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.question {
+  border: 1px solid #e6e6e6;
+  text-align: right;
+  background: #00000020;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+.question legend {
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  padding: 0 0.25rem;
+  font-size: 1rem;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 6px;
+  transition: background-color 150ms, transform 120ms;
+}
+.option .radio {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #cfd8e3;
+  display: inline-grid;
+  place-items: center;
+  background: white;
+}
+.option input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  border-radius: 50%;
+  border: 2px solid #cfd8e3;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+.option input[type="radio"]::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: transparent;
+  display: block;
+  transform: scale(0);
+  transition: transform 120ms ease;
+}
+.option input[type="radio"]:checked::after {
+  transform: scale(1);
+  background: #286ef0;
+}
+.option-text {
+  margin-inline-start: 0.25rem;
+}
+.option:hover {
+  background: #fbfbff;
+  transform: translateY(-1px);
+}
+.option input[type="radio"] {
+  transform: scale(1.05);
+  margin-inline-start: 0; /* keep radio visually consistent in RTL */
+}
+.option-text {
+  display: inline-block;
+  padding: 0.1rem 0.25rem;
+  border-radius: 6px;
+}
+/* highlight the option text when its radio is checked */
+.option input[type="radio"]:checked + .option-text {
+  background: #eef6ff;
+  color: #000000;
+}
+.controls {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.submit, .reset {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: linear-gradient(90deg,#2b6ef6,#1a4ed6);
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.reset { background: #888; }
+.result {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 6px;
+  background: #f7f7f7;
+}
+.option.correct {
+  background: rgba(50,205,50,0.08);
+  border-right: 4px solid rgba(16,185,129,0.9);
+}
+
+/* center quiz container and card look */
+.quiz-root { 
+  margin-top: 3.2rem;
+  margin-bottom: 3.2rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+}
+
+.result { background: rgba(255,255,255,0.03); color: #e6eef8; }
+
+
+/* responsive tweaks */
+@media (max-width: 640px) {
+  .quiz-root { padding: 0.6rem; }
+  .question { padding: 0.6rem; }
+  .submit, .reset { padding: 0.45rem 0.8rem; }
+}
